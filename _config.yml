@@ -22,7 +22,7 @@ url: "blog.patchgirl.io" # the base hostname & protocol for your site, e.g. http
 demo: "https://patchgirl.io"
 twitter_username: matsumonkie
 github_username:  patchgirl
-github_repo: "https://github.com/matsumonkie/patchGirl"
+github_repo: "https://github.com/patchgirl/patchgirl"
 twitter: "https://twitter.com/Matsumonkie"
 
 # Build settings

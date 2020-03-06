@@ -15,7 +15,7 @@ And so is born the idea of [Patchgirl](https://patchgirl.io), a web app built so
 
 In the process of building Patchgirl, I also wanted to write feedbacks on my journey to reflect on:
 - What brought me pure joy
-- What made me tear my hear out
+- What made me tear my hair out
 - Explain whether I consider the technologies I've used as [production ready][production-ready]
 
 Hopefully, this series will interest developers with no to few experience with FP.

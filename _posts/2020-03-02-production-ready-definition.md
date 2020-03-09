@@ -4,6 +4,8 @@ title:  "Production ready definition"
 date:   2020-03-02 00:00:00 +0100
 ---
 
+{% include building-a-web-app-with-functional-programming-summary.md %}
+
 This post's purpose is only to define what I will later refer to be "production ready" regarding a programming language/framework/library...
 Please note that this is my definition.<br/>
 There are many definitions for a system to be production ready. It can, for example, be any combinations of:

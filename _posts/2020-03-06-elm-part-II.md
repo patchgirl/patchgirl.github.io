@@ -5,6 +5,8 @@ date:   2020-03-06 00:00:00 +0100
 categories: elm
 ---
 
+{% include building-a-web-app-with-functional-programming-summary.md %}
+
 Time to talk about Elm's ecosystem ! If you haven't read it yet, check out [part I][elm-part-I] of [Building a web app with functional programming][building-a-web-app-with-fp].
 
 # Guide, documentations and best practices

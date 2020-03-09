@@ -4,6 +4,8 @@ title:  "Building a web app with functional programming - Intro"
 date:   2020-03-01 00:00:00 +0100
 ---
 
+{% include building-a-web-app-with-functional-programming-summary.md %}
+
 # The idea
 
 While working at my previous company, I felt like building a Postman like web app, a dead simple rest client.

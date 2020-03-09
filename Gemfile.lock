@@ -248,6 +248,7 @@ DEPENDENCIES
   jekyll-feed (~> 0.6)
   jekyll-paginate
   jekyll-theme-hyde
+  jemoji
   minima (~> 2.0)
   tzinfo-data
 

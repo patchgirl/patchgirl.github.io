@@ -43,10 +43,10 @@ Elm-ui saved me hundreds of hours of frustration, helped me design a [nice UI](h
 ## The downsides
 
 There are many fields I haven't experimented yet. Javascript interaction with *Ports*, mobile UI/UX design, more advanced UI like modals, animations...
-So I don't have the full picture of the language. But from my experience, it's hard to give any impactful downsides. After months of development, I have yet to found something that felt inherently bad or could be improved. <br/>
+So I don't have the full picture of the language. But from my experience, it's hard to give any impactful downsides. After months of development, I have yet to find something that felt inherently bad or could be improved. <br/>
 Sure it will feel a bit verbose for Haskellers and some concepts are hard to initially grasp for beginners (json encoder/decoder, url parsing, maybe) but that's hardly an inconvenience compared to the gain in productivity.
 
-I will keep on writing elm and maybe I'll found downsides. In the meantime, give it a try, you won't be disappointed !
+I will keep on writing elm and maybe I'll find downsides. In the meantime, give it a try, you won't be disappointed!
 
 ## Production ready
 

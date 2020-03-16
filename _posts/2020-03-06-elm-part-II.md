@@ -48,7 +48,7 @@ Sure it will feel a bit verbose for Haskellers and some concepts are hard to ini
 
 I will keep on writing elm and maybe I'll found downsides. In the meantime, give it a try, you won't be disappointed !
 
-## Production ready
+## Production ready?
 
 So is it [production ready][production-ready] ? :100:% yes. The learning curve is quite shallow so your team will get up to speed in a matter of days. The benefits are huge:
 - no more runtime error :heavy_check_mark:
@@ -57,13 +57,13 @@ So is it [production ready][production-ready] ? :100:% yes. The learning curve i
 
 If it fits your need you should totally embrace Elm.
 
-## Delightful language ?
+## Delightful language?
 
 Because of its friendly community, its well written guides/documentation, its beginner focused approach and its fast and helpful compiler, Elm has become my go to language for front end application.
 
 It is such a great product that I also advise people who want to learn about functional programming to avoid Scala or Haskell and learn Elm instead. In my opinion, Elm does a fabulous job at discovering the advantages of functional programming over more traditional paradigms.<br/>
 
-So yeah, it doesn't come as a surprise that I found Elm a **delightful language** :heart:
+So yeah, it doesn't come as a surprise that I find Elm a **delightful language** :heart:
 
 :cactus:
 

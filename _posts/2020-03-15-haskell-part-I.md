@@ -60,16 +60,9 @@ The mtl style is probably the easiest to start with because it has many online m
     Once setup though, it's quite easy to work with though. <br/>
 So depending on the library you use, it might not be a trivial task.
 
-3. Testing
+3. Other
 
-    To me, this is probably the main downside to the mtl style compared to its alternatives.<br/>
-    Monad transformers won't give you a native solution to easily mock part of your project. <br/>
-    This is particularly cumbersomme when dealing with IO computations. For example, if you need to query another API or send an email, in your tests, you'll have to provide yourself a solution to mock these operations.
-
-4. Other
-
-    The mtl has other downsides (that you'll find in other blog posts like its boilerplate) that I personally didn't encounter. I assume this is due to Patchgirl being quite simple so far (my monad transformer stack solely consist in being able to read from an environment and throw error).<br/>
-    Aside from the testing part, mtl style is be a good match for my projects.
+    The mtl has other downsides (that you'll find in other blog posts like its boilerplate) that I personally didn't encounter (yet). I assume this is due to Patchgirl being quite simple so far (my monad transformer stack solely consist in being able to read from an environment and throw error).<br/>
 
 ## Technical flaws
 

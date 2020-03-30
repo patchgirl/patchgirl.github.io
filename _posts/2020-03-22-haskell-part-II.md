@@ -12,14 +12,16 @@ Howdy,
 
 This post is part of the series [building a web app with functional programming languages][building-a-web-app-with-fp]. This part will focus on the libraries used while building the backend API.
 
-I wanted to describe which [library](https://github.com/patchgirl/patchgirl/blob/59834f4200aaaeb9cffa69789e1bdf88b326530a/back/package.yaml#L40-L77) I used, why I picked them and whether I consider them production ready.
+When I started working on the API backing patchgirl, I was initially a bit lost. Many frameworks and librairies were available and I couldn't figure out which one to use for my project. I will describe which library [I used](https://github.com/patchgirl/patchgirl/blob/59834f4200aaaeb9cffa69789e1bdf88b326530a/back/package.yaml#L40-L77), why I picked them and whether I consider them production ready.
+Hopefully, it will help you deciding what to use!
+
 Please note that I barelly had any experience with any of them before so I'll approach them with a beginner state of mind.
 
 # Web server
 
 I heard you need to create a web API? Well my friend, before you start coding, you need to find your way through the many existing frameworks.<br/>
 
-My requirements where only to have a framework with a well written guide and documentation because I didn't want to spend time figuring "simple" things. I started to play with the one that felt simpler (eg: Scotty, Spock...).
+My requirements were only to have a framework with a well written guide and documentation because I didn't want to spend time figuring "simple" things. I started to play with the one that felt simpler (eg: Scotty, Spock...).
 But I wasn't totally satisfied until I tried Servant and Yesod. Both diametrically opposed, Servant focus on the separation of concerns where Yesod comes with a full battery of tools (Orm, DB migration, html forms, web sessions, authentication...). <br/>
 On the one hand the latter was appealing because it felt I wouldn't have to spend time searching other tools. On the other hand I tend to prefer software with a separation of concern philosophy.
 

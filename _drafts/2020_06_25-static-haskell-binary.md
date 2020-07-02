@@ -5,7 +5,7 @@ date:   2020-06-25 00:00:00 +0100
 categories: haskell
 ---
 
-In this post, I'll try to explain what are dynamic librairies and static executable. I'll also show how to create the latter with Nix on Linux.
+In this post, I'll try to explain what are dynamic libraries and static executable. I'll also show how to create the latter with Nix on Linux.
 
 # Introduction
 
@@ -18,9 +18,9 @@ The complete project looks like this:
 
 I wanted Patchgirl-runner to be easy to use. Ideally, you would just have to download it and run it. But because it is written in Haskell, it was natively compiled to a dynamic executable.
 
-# Dynamic librairies
+# Dynamic libraries
 
-By default, when you compile your haskell program to an executable it will require dynamic libraries to work. This means that your executable cannot work alone.
+By default, when you compile your Haskell program to an executable it will require dynamic libraries to work. This means that your executable cannot work alone.
 
 ## Visualizing dynamic libraries
 
@@ -81,31 +81,31 @@ One way to tell whether a library is dynamic is the extension `.so` (i.e **s**ha
 When you run your executable, these libraries will also be loaded and accessible to your program.
 I'm not going to describe them all but to in a nutshell, `libm` provides mathematic functions like `abs`, `div` or `cos`...<br/>
 `libgmp` provides arbitrary precision arithmetic, operating on signed integers, rational numbers, and floating-point numbers...
-This librairies are part of a more global library `glibc` that was splitted.
+This libraries are part of a more global library `glibc` that was splitted.
 
-## Dynamic librairies pros and cons
+## Dynamic libraries pros and cons
 
-Dynamic librairies have some advantages. One of them is the executable size. <br/>
-These librairies are shared by all executables which need them.
-That means you can have lightweight executables because they doesnt include librairies.
+Dynamic libraries have some advantages. One of them is the executable size. <br/>
+These libraries are shared by all executables which need them.
+That means you can have lightweight executables because they doesn't include libraries.
 
 An other nice advantage is maintainability. If many programs depends on a library with security issues or bugs, you will only need to upgrade the culprit library to fix them all.
 
-On the other hand, you cannot distribute your executable easily to your customer. If you copy the executable on another computer, it will most likely fail to run because the dynamic librairies it requires are not present.
+On the other hand, you cannot distribute your executable easily to your customer. If you copy the executable on another computer, it will most likely fail to run because the dynamic libraries it requires are not present.
 
 Which brings us to static libraries.
 
 # Building a standalone executable
 
-Dynamic librairies are not great when it comes to make application usage/installation easy. This is even more true on Linux distributions where each distribution has it own way of packaging a software (e.g: *dpgk*, *rpm*, *yum*, *snap*, *flatpak*...)<br/>
+Dynamic libraries are not great when it comes to make application usage/installation easy. This is even more true on Linux distributions where each distribution has it own way of packaging a software (e.g: *dpgk*, *rpm*, *yum*, *snap*, *flatpak*...)<br/>
 If we want to provide a standalone executable to simplify the developer and the customers' life, we should generate a static executable instead.
 
 ## Static executable
 
-nb: When I refer to a **static executable**, I mean an executable which doesnt require dynamic librairies.
+nb: When I refer to a **static executable**, I mean an executable which doesnt require dynamic libraries.
 
 If we want to provide an executable without dependency, we'd rather make it completely static (i.e: running `ldd` on it should return nothing). One way of doing this is to tweak Cabal/Stack/whatever building tool you are using and set it up to build static binary.
-But we unfortunatelly can't just stop here. Indeed, even if you build a static executable with this solution, you might not be able to ship your binary to another platform.
+But we unfortunately can't just stop here. Indeed, even if you build a static executable with this solution, you might not be able to ship your binary to another platform.
 
 The reason is that your static binary will have been compiled against a specific version of glibc which might not be the same on your the targeted computer. That means that the API your executable is going to use could be incompatible with the kernel.
 
@@ -117,7 +117,7 @@ So can we overcome this issue ? On GNU/linux operating systems, we can thanks to
 
 In a nutshell, musl is another implementation of the libc. It has the nice advantage of providing a single API so whatever program compiled statically against musl should theorically work on any GNU/Linux platforms.
 
-Cool, so musl looks like a great solution! How do we use it in our project. Well GHC is traditionnaly compiled against glibc so every time you compile with GHC, it will make it glibc dependent... The solution is to compile GHC with musl!
+Cool, so musl looks like a great solution! How do we use it in our project. Well GHC is traditionally compiled against glibc so every time you compile with GHC, it will make it glibc dependent... The solution is to compile GHC with musl!
 
 This looks like a difficult job, Fortunately **@nh2** has already done the job with [static-haskell-nix](https://github.com/nh2/static-haskell-nix)
 
@@ -135,7 +135,7 @@ Instead, we are going to write some Nix code to use with static-haskell-nix.
 
 Alright, here is the requirements:
 - simple project that uses a recent version of stack
-- our project should be splitted in 2 packages, the library and the executable
+- our project should be split in 2 packages, the library and the executable
 - the executable package should depend on the library
 - our project should use postgresql-simple (meaning we will have to generate an executable that embed the **libpq** library)
 
@@ -202,7 +202,7 @@ ldd ~/.local/bin/hello-world-app-exe
     ... truncated for brevity
 ```
 
-The output shows that adding `postgresql-simple` as a dependency added other dynamic librairies like `libpq`.
+The output shows that adding `postgresql-simple` as a dependency added other dynamic libraries like `libpq`.
 This executable works fine but we want it to be fully static. It's time to play with Nix and `static-haskell-nix`!
 
 ## Static build script with Nix

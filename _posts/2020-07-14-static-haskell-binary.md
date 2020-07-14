@@ -1,11 +1,12 @@
 ---
 layout: post
-title:  "Building static Haskell binary"
-date:   2020-06-25 00:00:00 +0100
+title:  "Building static Haskell binary with Nix on Linux"
+date:   2020-07-14 00:00:00 +0100
 categories: haskell
 ---
 
-In this post, I'll try to explain what are dynamic libraries and static executable. I'll also show how to create the latter with Nix on Linux.
+In this post, I'll try to explain what are dynamic libraries and static executable, how they work what are there strengths/weaknesses.<br/>
+I'll also show how to create the latter with Nix on Linux.
 
 # Introduction
 
@@ -93,7 +94,7 @@ An other nice advantage is maintainability. If many programs depends on a librar
 
 On the other hand, you cannot distribute your executable easily to your customer. If you copy the executable on another computer, it will most likely fail to run because the dynamic libraries it requires are not present.
 
-Which brings us to static libraries.
+Which brings us to static binary.
 
 # Building a standalone executable
 
@@ -102,7 +103,7 @@ If we want to provide a standalone executable to simplify the developer and the 
 
 ## Static executable
 
-nb: When I refer to a **static executable**, I mean an executable which doesnt require dynamic libraries.
+> nb: When I refer to a **static executable**, I mean an executable which doesnt require dynamic libraries.
 
 If we want to provide an executable without dependency, we'd rather make it completely static (i.e: running `ldd` on it should return nothing). One way of doing this is to tweak Cabal/Stack/whatever building tool you are using and set it up to build static binary.
 But we unfortunately can't just stop here. Indeed, even if you build a static executable with this solution, you might not be able to ship your binary to another platform.

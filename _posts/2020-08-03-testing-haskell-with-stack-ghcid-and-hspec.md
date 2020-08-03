@@ -1,6 +1,6 @@
 ---
 title:  "Testing Haskell code with Stack, Ghcid and Hspec"
-date:   2020-07-21 00:00:00 +0100
+date:   2020-08-03 00:00:00 +0100
 categories: haskell
 ---
 

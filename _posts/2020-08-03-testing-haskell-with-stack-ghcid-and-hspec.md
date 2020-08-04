@@ -147,5 +147,9 @@ fi
 You just need to put this content in the file `.git/hooks/pre-commit` and make it executable (`chmod +x .git/hooks/pre-commit`).
 Now, right before you git commit, git will make sure that you do not commit any focused test whatsoever!
 
+ps: You don't actually need this pre-commit hook. **@solirc_** pinpointed that you can actually make hspec fails if one of your test is focused. This is mentioned in the [documentation](https://hspec.github.io/options.html) and can be done with the argument `--fail-on-focused`.<br/>
+I'm leaving the pre commit hook as it might still comes in handy.
+
+
 
 :cactus:

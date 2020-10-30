@@ -198,6 +198,8 @@ For a simple case like this one, writing an installer isn't too hard. If you don
 - [Vrom911 blog post](https://vrom911.github.io/blog/github-actions-releases) to generate executable from Github Action for MacOS/Windows/Linux
 - [Haskell.nix](https://input-output-hk.github.io/haskell.nix/) to cross-compile your Haskell project with Nix
 
+Also, I haven't tried it but there exists a Haskell package called [nsis](https://hackage.haskell.org/package/nsis) which provides a more concise DSL to build your script.
+
 I hope this article helps you write more Haskell on Windows!!
 
 :cactus:
